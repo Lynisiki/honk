@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -32,7 +33,7 @@ public class NewsManager {
 
         Fragment fragment = new WebViewFragment();
         fragment.setArguments(bundle);
-        FragmentTransaction ft = ((NewsFragment)newsFragment).getActivity().getSupportFragmentManager().beginTransaction();
+        FragmentTransaction ft = newsFragment.getActivity().getSupportFragmentManager().beginTransaction();
         ft.addToBackStack(null); //uncomment to enable backpress to return to previous fragment
         ft.replace(R.id.main_frame_container, fragment);
         ft.commit();

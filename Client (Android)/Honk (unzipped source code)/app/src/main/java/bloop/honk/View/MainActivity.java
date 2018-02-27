@@ -152,6 +152,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_feed:
                 fragment = new FeedsFragment();
                 break;
+            case R.id.nav_carparks:
+                fragment = new CarParkFragment();
+                break;
             case R.id.nav_cameras:
                 fragment = new CamerasFragment();
                 break;

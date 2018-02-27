@@ -8,6 +8,7 @@
     <string name="drawer_news">News</string>
     <string name="drawer_feeds">Feeds</string>
     <string name="drawer_cameras">Cameras</string>
+    <string name="drawer_carparks">Car Parks</string>
     <string name="drawer_maps">Maps</string>
     <string name="drawer_favourites">Favourites</string>
     <string name="drawer_login">Login</string>
