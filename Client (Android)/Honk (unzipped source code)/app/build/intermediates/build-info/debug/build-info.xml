@@ -5,35 +5,38 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="METHOD_DELETED"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.0.1"
-    timestamp="1520262282901"
+    timestamp="1520271717156"
     token="8766941712364086216"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="311" />
+        duration="232" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="25" />
+        duration="12" />
     <task
         name="verifier"
-        duration="12" />
+        duration="5" />
 
     <artifact
-        location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1520169564312"
+        timestamp="1520263191466"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
@@ -42,22 +45,10 @@
             location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\outputs\apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-        <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
             location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
             location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
@@ -66,35 +57,14 @@
             location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1520246555971"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
             location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1520247618523"
-        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
         <artifact
             location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
@@ -102,10 +72,19 @@
     <build
         build-mode="COLD"
         ir-eligibility="METHOD_DELETED"
-        timestamp="1520262282901"
+        timestamp="1520268887807"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1520271717156"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="E:\coding\honk\Client (Android)\Honk (unzipped source code)\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
     </build>
 

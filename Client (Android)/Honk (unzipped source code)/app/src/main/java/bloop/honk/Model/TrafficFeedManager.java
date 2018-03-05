@@ -39,6 +39,7 @@ public class TrafficFeedManager {
         StringRequest request = new StringRequest(Request.Method.GET, Config.FEED_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                response = response.substring(response.indexOf('['));
                 feedList.clear();
                 feedList.addAll(Arrays.asList(gson.fromJson(response, FeedItem[].class)));
                 recyclerView.setAdapter(feedsAdapter);

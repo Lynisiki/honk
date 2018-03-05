@@ -24,7 +24,7 @@ public class Config {
     //URL for news
     public static final String NEWS_URL = "https://www.lta.gov.sg/apps/news/feed.aspx?svc=getnews&contenttype=rss&count=10&category=1&category=2&category=3";
     //URL for feed
-    public static final String FEED_URL = "http://172.21.148.166/example/dao/Hookdaoimpl.php?function=getTrafficFeed";
+    public static final String FEED_URL = "http://www.dementiafyp2018.com/dao/Hookdaoimpl.php?function=getTrafficFeed";
     //URL for car park
     public static final String CAR_PARK_URL = "http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2";
     //JSON TAGS WHEN PARSING LOGIN & REGISTER REQUEST

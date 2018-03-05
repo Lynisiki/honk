@@ -50,7 +50,7 @@ public class FavouritesFragment extends Fragment {
         } else {
             username = sharedPreferences.getString(Config.USERNAME_SHARED_PREF, ""); //used this to get current username
 
-            recyclerView = (RecyclerView) rootView.findViewById(R.id.postview);
+            recyclerView = rootView.findViewById(R.id.postview);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
             adapter = new BookmarkAdapter(getActivity(), posts);
@@ -75,8 +75,6 @@ public class FavouritesFragment extends Fragment {
                 }
             });
         }
-
-
         return rootView;
     }
 

@@ -31,7 +31,7 @@ public class BookmarkManager {
         gsonBuilder.setDateFormat("M/d/yy hh:mm a");
         gson = gsonBuilder.create();
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.GETBM_URL + username,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.GETBM_URL + "&username=" + username,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -48,11 +48,11 @@ public class BookmarkManager {
                             recyclerView.setAdapter(adapter);// data to populate the RecyclerView with
                         }
                     }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                    }
         });
         // Add the request to the RequestQueue.
         queue.add(stringRequest);

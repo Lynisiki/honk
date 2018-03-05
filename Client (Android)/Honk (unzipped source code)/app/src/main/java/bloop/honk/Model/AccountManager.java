@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Base64;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -14,6 +15,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.HashMap;
@@ -66,19 +69,48 @@ public class AccountManager {
                         //You can handle error here if you want
                     }
                 }) {
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<>();
+//                //Adding parameters to request
+//                params.put(Config.TAG_USERNAME, username);
+//                params.put(Config.TAG_PASSWORD, password);
+//                return params; //return params to string request
+//            }
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            public byte[] getBody() throws AuthFailureError {
+                Map<String, String> params = getUserInfo();
+                if (params != null && params.size() > 0) {
+                    return encodeParameters(params, getParamsEncoding());
+                }
+                return null;
+            }
+
+            public Map<String, String> getUserInfo() {
                 Map<String, String> params = new HashMap<>();
-                //Adding parameters to request
                 params.put(Config.TAG_USERNAME, username);
                 params.put(Config.TAG_PASSWORD, password);
-
-                return params; //return params to string request
+                return params;
             }
         };
         //Adding the string request to the queue
         RequestQueue requestQueue = Volley.newRequestQueue(activity);//this is the login request.
         requestQueue.add(stringRequest);
+    }
+
+    public byte[] encodeParameters(Map<String, String> params, String paramsEncoding) {
+        StringBuilder encodedParams = new StringBuilder();
+        try {
+            for (Map.Entry<String, String> entry : params.entrySet()) {
+                encodedParams.append(URLEncoder.encode(entry.getKey(), paramsEncoding));
+                encodedParams.append('=');
+                encodedParams.append(URLEncoder.encode(entry.getValue(), paramsEncoding));
+                encodedParams.append('&');
+            }
+            return encodedParams.toString().getBytes(paramsEncoding);
+        } catch (UnsupportedEncodingException uee) {
+            throw new RuntimeException("Encoding not supported: " + paramsEncoding, uee);
+        }
     }
 
     public String hashPassword(final char[] password, final byte[] salt) {
@@ -129,6 +161,8 @@ public class AccountManager {
                                 Toast.makeText(activity, "Registered & logged in", Toast.LENGTH_SHORT).show();
                                 activity.finish();
 
+                            } else if (response.equals("unsuccessful")){
+                                Toast.makeText(activity, "Register fail.", Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(activity, "Username Taken", Toast.LENGTH_SHORT).show();
                             }
@@ -140,12 +174,21 @@ public class AccountManager {
                             Toast.makeText(activity, "Unexpected error occured, registration not successful.", Toast.LENGTH_LONG).show();
                         }
                     }) {
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<String, String>();
+
+                protected Map<String, String> getUserInfo() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    //Adding parameters to request
                     params.put(Config.TAG_USERNAME, user.getUsername());
                     params.put(Config.TAG_PASSWORD, user.getPassword());
-                    return params;
+                    return params; //return params to string request
+                }
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    Map<String, String> params = getUserInfo();
+                    if (params != null && params.size() > 0) {
+                        return encodeParameters(params, getParamsEncoding());
+                    }
+                    return null;
                 }
             };
             RequestQueue requestQueue = Volley.newRequestQueue(activity);
