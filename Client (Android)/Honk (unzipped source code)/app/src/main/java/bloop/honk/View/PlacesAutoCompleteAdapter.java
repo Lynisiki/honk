@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import bloop.honk.Model.CarPark;
 import bloop.honk.Model.MapPlace;
 import bloop.honk.R;
 
@@ -64,8 +65,8 @@ public class PlacesAutoCompleteAdapter extends RecyclerView.Adapter<PlacesAutoCo
 
     }
 
-    public void setmResultList(ArrayList<MapPlace> mResultList) {
-        this.mResultList = mResultList;
+    public void setmResultList(ArrayList<CarPark> mResultList) {
+       // this.mResultList = mResultList;
     }
 
     public MapPlace getItem(int position) {

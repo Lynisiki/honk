@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import bloop.honk.Model.CarPark;
 import bloop.honk.R;
@@ -23,7 +24,7 @@ public class CarParkAdapter extends RecyclerView.Adapter<CarParkAdapter.MyViewHo
 
     public CarParkAdapter(Context context, List<CarPark> data) {
         inflater = LayoutInflater.from(context);
-        data.clear();
+        //data.clear();
         this.data = data;
         this.context = context;
     }

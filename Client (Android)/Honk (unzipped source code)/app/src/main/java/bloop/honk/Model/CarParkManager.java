@@ -20,6 +20,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import bloop.honk.R;
 import bloop.honk.View.CarParkAdapter;
@@ -106,7 +107,8 @@ public class CarParkManager {
                     carPark.setArea(jsonArray.getJSONObject(i).getString("Area"));
                     carPark.setAvailableLots(jsonArray.getJSONObject(i).getInt("AvailableLots"));
                     carPark.setCarParkID(jsonArray.getJSONObject(i).getString("CarParkID"));
-                    carPark.setDevelopment(jsonArray.getJSONObject(i).getString("Development"));
+                    String development = jsonArray.getJSONObject(i).getString("Development");
+                    carPark.setDevelopment(development);
                     carPark.setLocation(jsonArray.getJSONObject(i).getString("Location"));
                     String lotType = jsonArray.getJSONObject(i).getString("LotType");
                     switch (lotType){
@@ -120,9 +122,11 @@ public class CarParkManager {
                             carPark.setLotType("Heavy Vehicles");
                             break;
                     }
-
                     carParks.add(carPark);
+//                    carParks.put(development, carPark);
+//                    Log.v("Carpark", ""+carParks.size());
                 }
+                //Log.v("Load data", String.valueOf(carParks.keySet().size()));
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();

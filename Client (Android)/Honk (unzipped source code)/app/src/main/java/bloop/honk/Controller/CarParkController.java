@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 
 import java.util.List;
+import java.util.Map;
 
 import bloop.honk.Model.CarPark;
 import bloop.honk.Model.CarParkManager;
