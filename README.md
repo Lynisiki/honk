@@ -1,2 +1,3 @@
 # honk
-Software Engineering 
+NTU CZ3002
+Advanced Software Engineering 
